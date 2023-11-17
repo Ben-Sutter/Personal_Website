@@ -1,44 +1,97 @@
-import React, { useState } from 'react';
-import '../styles/generated.css';
+import React, { useState } from "react";
+
+import "../styles/generated.css";
 
 function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [message, setMessage] = useState('');
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+    submitted: false,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Phone Number:', phoneNumber);
-    console.log('Message:', message);
+    console.log("Name:", formState.name);
+    console.log("Email:", formState.email);
+    console.log("Phone Number:", formState.phoneNumber);
+    console.log("Message:", formState.message);
+    setFormState({ ...formState, submitted: true });
+  };
+
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
-    <div className="p-10">
-      <h1 className="text-4xl font-bold mb-4">Contact</h1>
-      <form onSubmit={handleSubmit} className="space-y-4" name="contact" netlify>
-        <label className="block">
-          <span className="text-gray-700">Name</span>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
-        </label>
-        <label className="block">
-          <span className="text-gray-700">Email</span>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
-        </label>
-        <label className="block">
-          <span className="text-gray-700">Phone Number</span>
-          <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
-        </label>
-        <label className="block">
-          <span className="text-gray-700">Message</span>
-          <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
-        </label>
-        <button type="submit" className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Submit</button>
-      </form>
+    <div className="flex justify-center">
+      <div className="w-full md:w-1/2 p-10">
+        <h1 className="text-4xl font-bold mb-4">Contact</h1>
+        {formState.submitted ? (
+          <p>Thank you for your message. We will get back to you soon.</p>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4"
+            name="contact"
+            netlify
+          >
+            <label className="block">
+              <span className="text-gray-700">Name</span>
+              <input
+                type="text"
+                name="name"
+                value={formState.name}
+                onChange={handleChange}
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+            </label>
+            <div className="flex">
+              <label className="block w-1/2 pr-2">
+                <span className="text-gray-700">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+              </label>
+              <label className="block w-1/2 pl-2">
+                <span className="text-gray-700">Phone Number</span>
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  value={formState.phoneNumber}
+                  onChange={handleChange}
+                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+              </label>
+            </div>
+            <label className="block">
+              <span className="text-gray-700">Message</span>
+              <textarea
+                name="message"
+                value={formState.message}
+                onChange={handleChange}
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+            </label>
+            <button
+              type="submit"
+              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Submit
+            </button>
+          </form>
+        )}
+      </div>
     </div>
   );
-};
+}
 
 export default Contact;
