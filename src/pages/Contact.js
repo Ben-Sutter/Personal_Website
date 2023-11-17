@@ -7,18 +7,10 @@ function Contact() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Phone Number:', phoneNumber);
-    console.log('Message:', message);
-  };
-
   return (
     <div className="p-10">
       <h1 className="text-4xl font-bold mb-4">Contact</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form name="contact" method="POST" netlify className="space-y-4">
         <label className="block">
           <span className="text-gray-700">Name</span>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
