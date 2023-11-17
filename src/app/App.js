@@ -9,13 +9,17 @@ import Contact from '../pages/Contact';
 const App = () => {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="./blog" element={<Blog />} />
-        <Route path="./resume" element={<Resume />} />
-        <Route path="./about" element={<About />} />
-        <Route path="./contact" element={<Contact />} />
-      </Routes>
+      <div className="bg-blue-100 min-h-screen"> {/* Change background color */}
+        <Header />
+        <div className="pt-20"> {/* Add padding-top */}
+          <Routes>
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 };

@@ -1,17 +1,19 @@
-
-import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/generated.css';
 
 const Header = () => {
   return (
-    <header style={{ position: 'fixed', top: 0, left: 0, right: 0 }}>
-        <ul style={{ display: 'flex', justifyContent: 'space-around', listStyle: 'none' }}>
-          <li><button><a href="/blog">Blog</a></button></li>
-          <li><button><a href="/resume">Resume</a></button></li>
-          <li><button><a href="/about">About Me</a></button></li>
-          <li><button><a href="/contact">Contact</a></button></li>
-          <li><button><a href="https://github.com">GitHub</a></button></li>
-        </ul>
+    <header className="fixed top-0 left-0 right-0 bg-blue-600 text-white shadow-md">
+        <div className="container mx-auto flex justify-between items-center p-5">
+          <h1 className="font-bold text-4xl">Ben Sutter</h1>
+          <ul className="flex space-x-4">
+            <li><button className="px-3 py-2 rounded bg-white text-blue-600"><Link to="/blog">Blog</Link></button></li>
+            <li><button className="px-3 py-2 rounded bg-white text-blue-600"><Link to="/resume">Resume</Link></button></li>
+            <li><button className="px-3 py-2 rounded bg-white text-blue-600"><Link to="/about">About Me</Link></button></li>
+            <li><button className="px-3 py-2 rounded bg-white text-blue-600"><Link to="/contact">Contact</Link></button></li>
+            <li><button className="px-3 py-2 rounded bg-white text-blue-600"><a href="https://github.com">GitHub</a></button></li>
+          </ul>
+        </div>
     </header>
   );
 };

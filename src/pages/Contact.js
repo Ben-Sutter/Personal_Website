@@ -16,33 +16,29 @@ function Contact() {
   };
 
   return (
-    <div>
-      <h1>Contact</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+    <div className="p-10">
+      <h1 className="text-4xl font-bold mb-4">Contact</h1>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <label className="block">
+          <span className="text-gray-700">Name</span>
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
         </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <label className="block">
+          <span className="text-gray-700">Email</span>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
         </label>
-        <br />
-        <label>
-          Phone Number:
-          <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+        <label className="block">
+          <span className="text-gray-700">Phone Number</span>
+          <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
         </label>
-        <br />
-        <label>
-          Message:
-          <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
+        <label className="block">
+          <span className="text-gray-700">Message</span>
+          <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm" />
         </label>
-        <br />
-        <button type="submit">Submit</button>
+        <button type="submit" className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Submit</button>
       </form>
     </div>
   );
-}
+};
 
 export default Contact;

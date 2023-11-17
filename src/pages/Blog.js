@@ -20,14 +20,13 @@ const Blog = () => {
   ];
 
   return (
-    <div>
-      <h1>Blog</h1>
+    <div className="p-10">
+      <h1 className="text-4xl font-bold mb-4">Blog</h1>
       {blogPosts.map((post, index) => (
-        <div key={index}>
-          <h2>{post.title}</h2>
-          <p>Author: {post.author}</p>
-          <p>Date: {post.date}</p>
-          <p>{post.content}</p>
+        <div key={index} className="mb-8">
+          <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
+          <p className="text-sm text-gray-500 mb-2">{post.author} - {post.date}</p>
+          <p className="text-lg">{post.content}</p>
         </div>
       ))}
     </div>
