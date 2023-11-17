@@ -10,11 +10,12 @@
     "postcss-cli": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.19.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run build:css && react-scripts start", 
+    "start": "npm run build:css && react-scripts start",
     "build": "npm run build:css && react-scripts build",
     "build:css": "postcss src/App.css -o ./src/styles/generated.css",
     "test": "react-scripts test",

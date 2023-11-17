@@ -1,18 +1,20 @@
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import About from "./pages/About.js";
+import Blog from "./pages/Blog.js";
+import Contact from "./pages/Contact.js";
+import Resume from "./pages/Resume.js";
 import './styles/generated.css';
-import Header from './Components/header.js';
+import Header from "./components/Header.js";
 
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-        <p>
-          hi this is my site
-        </p>
-      </header>
+    <div>
+      <h1>Hi, this is my website</h1>
+      <Header />
     </div>
   );
-}
-
-export default App;
+};
