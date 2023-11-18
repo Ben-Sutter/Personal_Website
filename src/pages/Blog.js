@@ -1,3 +1,8 @@
+/**
+ * Renders a blog page with a list of blog posts.
+ *
+ * @returns {JSX.Element} The rendered blog page.
+ */
 import React from "react";
 import "../styles/generated.css";
 

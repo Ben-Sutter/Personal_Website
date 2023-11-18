@@ -1,3 +1,7 @@
+/**
+ * Header component for the website.
+ * @returns {JSX.Element} The rendered header component.
+ */
 import { Link } from 'react-router-dom';
 import '../styles/generated.css';
 

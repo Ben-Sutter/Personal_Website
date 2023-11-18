@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+/**
+ * Renders a contact form component.
+ * 
+ * @returns {JSX.Element} The Contact component.
+ */
 
+import React, { useState } from "react";
 import "../styles/generated.css";
 
 function Contact() {

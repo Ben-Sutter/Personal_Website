@@ -1,3 +1,9 @@
+/**
+ * The main component of the application.
+ * Renders the header and routes to different pages based on the URL path.
+ *
+ * @returns {JSX.Element} The rendered App component.
+ */
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';

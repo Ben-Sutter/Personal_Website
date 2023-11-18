@@ -1,3 +1,8 @@
+/**
+ * Renders the About page component.
+ * 
+ * @returns {JSX.Element} The rendered About page component.
+ */
 import React from 'react';
 import '../styles/generated.css';
 

@@ -1,3 +1,8 @@
+/**
+ * Represents the homepage. The default page when the user first visits the website or clicks the title/logo.
+ * 
+ * @returns {JSX.Element} The rendered Home component.
+ */
 import React from 'react';
 import pic from '../files/wingpic.png';
 
