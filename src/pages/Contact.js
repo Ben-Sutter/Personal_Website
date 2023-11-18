@@ -29,7 +29,7 @@ function Contact() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full md:w-1/2 p-10">
+      <div className="w-full md:w-3/4 p-10">
         <h1 className="text-4xl font-bold mb-4">Contact</h1>
         {formState.submitted ? (
           <p>Thank you for your message. We will get back to you soon.</p>
