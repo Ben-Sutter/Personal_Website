@@ -1,6 +1,6 @@
 /**
  * Renders a contact form component.
- * 
+ *
  * @returns {JSX.Element} The Contact component.
  */
 
