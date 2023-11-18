@@ -16,7 +16,7 @@ import Home from '../pages/Home';
 const App = () => {
   return (
     <Router>
-      <div className="bg-blue-100 min-h-screen"> {/* Change background color */}
+      <div className="bg-purple-100 min-h-screen"> {/* Change background color */}
         <Header />
         <div className="pt-20"> {/* Add padding-top */}
           <Routes>
