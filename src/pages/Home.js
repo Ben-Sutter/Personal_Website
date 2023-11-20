@@ -4,20 +4,20 @@
  * @returns {JSX.Element} The rendered Home component.
  */
 import React from "react";
-import pic from "../files/wingpic.png";
+import pic from "../files/framed_wings2.png";
 
 const Home = () => {
   return (
     <div className="flex justify-center">
       <div className="w-full p-10 flex flex-wrap md:flex-nowrap">
         <div className="w-full md:w-3/4 lg:w-1/2 xl:w-3/4 pr-0 md:pr-10 flex flex-col justify-center mx-auto">
-          <div className="flex justify-between">
+          <div className="flex justify-between space-x-16">
             <div className="w-1/2">
               <h1 className="text-4xl font-bold mb-4">
                 Welcome to My Website!
               </h1>
               <p className="mb-8">
-                Hi there! I'm Ben, a software developer passionate about
+                Hi there! I'm Ben, a software engineer passionate about
                 creating amazing web applications. This is my personal website
                 where I showcase my projects and share my thoughts on various
                 topics. Feel free to explore and get in touch with me if you
