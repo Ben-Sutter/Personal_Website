@@ -7,7 +7,7 @@ import "../styles/generated.css";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-purple-800 text-fuchsia-200 shadow-md px-2 sm:px-5">
+    <header className="fixed top-0 left-0 right-0 bg-purple-800 text-fuchsia-300 shadow-md px-2 sm:px-5">
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center py-3">
         <h1 className="font-bold text-3xl sm:text-5xl font-pacifico mb-2 sm:mb-0">
           <Link to="/">Ben Sutter</Link>

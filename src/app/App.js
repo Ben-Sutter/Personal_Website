@@ -16,7 +16,7 @@ import Home from "../pages/Home";
 const App = () => {
   return (
     <Router>
-      <div className="bg-purple-200 min-h-screen">
+      <div className="bg-fuchsia-200 min-h-screen">
         <Header />
         <div className="pt-20">
           <Routes>
