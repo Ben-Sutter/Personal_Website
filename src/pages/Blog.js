@@ -10,7 +10,7 @@ const Blog = () => {
 
   useEffect(() => {
     const loadPosts = async () => {
-      const dirResponse = await axios.get('https://api.github.com/repos/username/repo/contents/posts');
+      const dirResponse = await axios.get('https://api.github.com/repos/Ben-Sutter/personal_website/contents/src/files/posts');
       const mdFiles = dirResponse.data.filter(file => file.name.endsWith('.md'));
   
       const posts = [];
