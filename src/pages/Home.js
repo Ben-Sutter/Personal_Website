@@ -5,25 +5,8 @@
  */
 import React, { useState, useEffect } from "react";
 import pic from "../files/pictures/framed_buffalo_pic.png";
-import introFile from "../files/general_text/intro.txt";
-import funSectionFile from "../files/general_text/funSection.txt";
-
 
 const Home = () => {
-  const [introText, setIntroText] = useState("");
-  const [funSectionText, setFunSectionText] = useState("");
-
-  useEffect(() => {
-    fetch(introFile)
-      .then((response) => response.text())
-      .then((data) => setIntroText(data))
-      .catch((error) => console.log(error));
-
-    fetch(funSectionFile)
-      .then((response) => response.text())
-      .then((data) => setFunSectionText(data))
-      .catch((error) => console.log(error));
-  }, []);
 
   return (
     <div className="flex justify-center">
@@ -35,14 +18,29 @@ const Home = () => {
                 Welcome to My Website!
               </h1>
               <p className="mb-8">
-                {introText}
+                Hi, my name is Ben. Earlier this year I was laid off and
+                remained unemployed for four months. During that time, I told
+                myself I would build a new website for my name's domain. I now
+                find myself two weeks into employment, finally getting to doing
+                this, and I promise more is coming. Feel free to check out what
+                I have so far, I will continue to add things (at least that's
+                what I am telling myself). For the latest content check out the
+                section marked "Latest" below. Hopefully I will add some sort of
+                thing below for you to see my latest posts/updates,commit
+                history, or something, otherwise this is a lil awk
               </p>
               <div className="rounded">
                 <h2 className="text-2xl font-bold mb-2 text-center">
                   Fun Section
                 </h2>
                 <p className="mb-2">
-                  {funSectionText}
+                  This was going to be the section where I shared a few hobbies,
+                  interests, and a fun fact when I began this project, hoping to
+                  use my website as a way to stand out in an application \(not
+                  that they would look, bffr\). Since I am not writing this as a
+                  branding tool anymore, I decided that as time goes on, I will
+                  try to make some new pages, hopefully programming cool
+                  features or making something fun that I want to share, idrk.
                 </p>
               </div>
             </div>

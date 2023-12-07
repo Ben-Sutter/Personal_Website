@@ -1,35 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/generated.css";
-import MarkdownIt from 'markdown-it';
 import axios from 'axios';
 
-const md = new MarkdownIt();
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
-
-  useEffect(() => {
-    const loadPosts = async () => {
-      const dirResponse = await axios.get('https://api.github.com/repos/Ben-Sutter/personal_website/contents/src/files/posts');
-      const mdFiles = dirResponse.data.filter(file => file.name.endsWith('.md'));
-  
-      const posts = [];
-      for (const file of mdFiles) {
-        const fileResponse = await axios.get(file.download_url);
-        const result = md.parse(fileResponse.data, {});
-  
-        const post = {
-          title: result[1].content,
-          date: result[2].content,
-          content: result.slice(6).map(token => token.content).join('\n')
-        };
-        posts.push(post);
-      }
-      setBlogPosts(posts);
-    };
-  
-    loadPosts();
-  }, []);
 
   return (
     <div className="flex justify-center">

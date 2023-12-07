@@ -3,6 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './styles/generated.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+// Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB2gnrqApzxQ28QB3-4s64YPEK9ZzFpD5w",
+  authDomain: "personal-website-bws.firebaseapp.com",
+  databaseURL: "https://personal-website-bws-default-rtdb.firebaseio.com",
+  projectId: "personal-website-bws",
+  storageBucket: "personal-website-bws.appspot.com",
+  messagingSenderId: "265080365893",
+  appId: "1:265080365893:web:04e55d364a45b54fc2d42c",
+  measurementId: "G-GEW9F79L9E"
+};
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
