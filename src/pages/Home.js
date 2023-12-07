@@ -3,10 +3,28 @@
  *
  * @returns {JSX.Element} The rendered Home component.
  */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import pic from "../files/framed_wings2.png";
+import introFile from "../files/intro.txt";
+import funSectionFile from "../files/funSection.txt";
+
 
 const Home = () => {
+  const [introText, setIntroText] = useState("");
+  const [funSectionText, setFunSectionText] = useState("");
+
+  useEffect(() => {
+    fetch(introFile)
+      .then((response) => response.text())
+      .then((data) => setIntroText(data))
+      .catch((error) => console.log(error));
+
+    fetch(funSectionFile)
+      .then((response) => response.text())
+      .then((data) => setFunSectionText(data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="flex justify-center">
       <div className="w-full p-10 flex flex-wrap md:flex-nowrap">
@@ -17,15 +35,16 @@ const Home = () => {
                 Welcome to My Website!
               </h1>
               <p className="mb-8">
-                Hi! My names Ben, and this is my website. 
-                If you would 
+                {introText}
               </p>
-              <h2 className="text-2xl font-bold mb-2 text-center">Fun Section</h2>
-              <p className="mb-2">
-                In this fun section, you can add any interesting content you
-                like. It could be a list of your hobbies, a random fact about
-                yourself, or even a mini game. Let your creativity run wild!
-              </p>
+              <div className="rounded">
+                <h2 className="text-2xl font-bold mb-2 text-center">
+                  Fun Section
+                </h2>
+                <p className="mb-2">
+                  {funSectionText}
+                </p>
+              </div>
             </div>
             <div className="w-full md:w-1/2">
               <img src={pic} alt="my pic" className="w-full h-auto" />
