@@ -4,9 +4,9 @@
  * @returns {JSX.Element} The rendered Home component.
  */
 import React, { useState, useEffect } from "react";
-import pic from "../files/framed_wings2.png";
-import introFile from "../files/intro.txt";
-import funSectionFile from "../files/funSection.txt";
+import pic from "../files/pictures/framed_buffalo_pic.png";
+import introFile from "../files/general_text/intro.txt";
+import funSectionFile from "../files/general_text/funSection.txt";
 
 
 const Home = () => {

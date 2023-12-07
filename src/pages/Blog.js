@@ -1,28 +1,36 @@
-/**
- * Renders a blog page with a list of blog posts.
- *
- * @returns {JSX.Element} The rendered blog page.
- */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/generated.css";
+import MarkdownIt from 'markdown-it';
+import axios from 'axios';
+
+const md = new MarkdownIt();
 
 const Blog = () => {
-  // Array of blog post data
-  const blogPosts = [
-    {
-      title: "First Blog Post",
-      author: "John Doe",
-      date: "2022-01-01",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
-    {
-      title: "Second Blog Post",
-      author: "Jane Smith",
-      date: "2022-01-05",
-      content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    // Add more blog posts as needed
-  ];
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      const dirResponse = await axios.get('https://api.github.com/repos/username/repo/contents/posts');
+      const mdFiles = dirResponse.data.filter(file => file.name.endsWith('.md'));
+  
+      const posts = [];
+      for (const file of mdFiles) {
+        const fileResponse = await axios.get(file.download_url);
+        const result = md.parse(fileResponse.data, {});
+  
+        const post = {
+          title: result[1].content,
+          date: result[2].content,
+          content: result.slice(6).map(token => token.content).join('\n')
+        };
+        posts.push(post);
+      }
+      setBlogPosts(posts);
+    };
+  
+    loadPosts();
+  }, []);
+
   return (
     <div className="flex justify-center">
       <div className="w-full md:w-3/4 p-10">
@@ -30,10 +38,8 @@ const Blog = () => {
         {blogPosts.map((post, index) => (
           <div key={index} className="mb-8">
             <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
-            <p className="text-sm text-gray-500 mb-2">
-              {post.author} - {post.date}
-            </p>
-            <p className="text-lg">{post.content}</p>
+            <h4 className="text-lg mb-2">{post.date}</h4>
+            <p className="text-base">{post.content}</p>
           </div>
         ))}
       </div>
