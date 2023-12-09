@@ -36,8 +36,8 @@ const Home = () => {
                 <p className="mb-2">
                   This was going to be the section where I shared a few hobbies,
                   interests, and a fun fact when I began this project, hoping to
-                  use my website as a way to stand out in an application \(not
-                  that they would look, bffr\). Since I am not writing this as a
+                  use my website as a way to stand out in an application (not
+                  that they would look, bffr). Since I am not writing this as a
                   branding tool anymore, I decided that as time goes on, I will
                   try to make some new pages, hopefully programming cool
                   features or making something fun that I want to share, idrk.
