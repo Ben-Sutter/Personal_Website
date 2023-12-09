@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/generated.css";
-import axios from 'axios';
 
 
 const Blog = () => {
-  const [blogPosts, setBlogPosts] = useState([]);
+  const [blogPosts] = useState([]);
 
   return (
     <div className="flex justify-center">

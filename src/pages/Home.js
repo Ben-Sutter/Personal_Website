@@ -3,7 +3,7 @@
  *
  * @returns {JSX.Element} The rendered Home component.
  */
-import React, { useState, useEffect } from "react";
+import React from "react";
 import pic from "../files/pictures/framed_buffalo_pic.png";
 
 const Home = () => {
