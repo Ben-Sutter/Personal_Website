@@ -14,6 +14,7 @@ import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 
 const App = () => {
+  document.title = "BENBENBENBENBENBENBENBENBENBENBENBENBENBEN";
   return (
     <Router>
       <div className="bg-fuchsia-200 min-h-screen">
