@@ -44,5 +44,17 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.5"
-  }
+  },
+  "description": "Current Build:",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ben-Sutter/personal_website.git"
+  },
+  "author": "Ben Sutter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ben-Sutter/personal_website/issues"
+  },
+  "homepage": "https://github.com/Ben-Sutter/personal_website#readme"
 }

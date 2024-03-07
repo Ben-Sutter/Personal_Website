@@ -38,6 +38,11 @@ const Header = () => {
               <a href="https://github.com/Ben-Sutter">GitHub</a>
             </button>
           </li>
+          <li>
+            <button className="px-2 sm:px-3 py-1 sm:py-2 rounded-lg bg-purple-700 text-fuchsia-200 font-bold hover:bg-fuchsia-700 hover:text-fuchsia-300">
+              <Link to="/login">Log in</Link>
+            </button>
+          </li>
         </ul>
       </div>
     </header>

@@ -12,9 +12,11 @@ import Resume from "../pages/Resume";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
+import Home from "../pages/Login";
+import Home from "../pages/PostEditor";
 
 const App = () => {
-  document.title = "BENBENBENBENBENBENBENBENBENBENBENBENBENBEN";
+  document.title = "BENBENBENBENBENBENBENBENBENBENBENBENBENBEN if you found this congrats! +1";
   return (
     <Router>
       <div className="bg-fuchsia-200 min-h-screen">
@@ -25,6 +27,8 @@ const App = () => {
             <Route path="/resume" element={<Resume />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/post-editor" element={<PostEditor />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
