@@ -6,7 +6,7 @@ const Blog = () => {
     <div className="flex justify-center">
       <div className="w-full md:w-3/4 p-10">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
-        <form name="contact">
+        <form name="contact" method="POST" netlify>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">
