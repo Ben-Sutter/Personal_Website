@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/generated.css";
 
 const Blog = () => {
-  const [blogPosts] = useState([]);
-
   return (
     <div className="flex justify-center">
       <div className="w-full md:w-3/4 p-10">
