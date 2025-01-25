@@ -4,6 +4,7 @@
  * @returns {JSX.Element} The rendered Home component.
  */
 import React from "react";
+import styled from 'styled-components';
 import pic from "../files/pictures/framed_buffalo_pic.png";
 
 const Home = () => {

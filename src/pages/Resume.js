@@ -3,6 +3,7 @@
  * @returns {JSX.Element} The rendered Resume page component.
  */
 import React from "react";
+import styled from 'styled-components';
 import "../styles/generated.css";
 import resume from "../files/resume.pdf"; // Import the PDF
 
