@@ -1,115 +1,72 @@
-/**
- * Renders a contact form component.
- *
- * @returns {JSX.Element} The Contact component.
- */
-
 import React, { useState } from "react";
-import "../styles/generated.css";
+import { Container, Form, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Contact() {
+const Contact = () => {
   const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phoneNumber: "",
-    message: "",
-    submitted: false,
+    name: '',
+    email: '',
+    message: ''
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Name:", formState.name);
-    console.log("Email:", formState.email);
-    console.log("Phone Number:", formState.phoneNumber);
-    console.log("Message:", formState.message);
-    setFormState({ ...formState, submitted: true });
-  };
-
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormState({
       ...formState,
-      [e.target.name]: e.target.value,
+      [name]: value
     });
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="w-full md:w-3/4 p-10">
-        <h1 className="text-4xl font-bold mb-4">Contact</h1>
-        {formState.submitted ? (
-          <p>Thank you for your message. We will get back to you soon.</p>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4"
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify
-          >
-            {/* Hidden field for Netlify form handling */}
-            <input type="hidden" name="form-name" value="contact" />
+    <Container className="py-4">
+      <h1 className="display-4 font-weight-bold mb-4">Contact</h1>
+      <Form name="contact" method="POST" data-netlify="true" netlify>
+        {/* Hidden field for Netlify form handling */}
+        <input type="hidden" name="form-name" value="contact" />
 
-            {/* Honeypot field to prevent spam submissions */}
-            <div style={{ display: "none" }}>
-              <label>
-                Don't fill this out if you're human:
-                <input type="text" name="bot-field" />
-              </label>
-            </div>
-            <label className="block">
-              <span className="text-gray-700">Name</span>
-              <input
-                type="text"
-                name="name"
-                value={formState.name}
-                onChange={handleChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-            </label>
-            <div className="flex">
-              <label className="block w-1/2 pr-2">
-                <span className="text-gray-700">Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </label>
-              <label className="block w-1/2 pl-2">
-                <span className="text-gray-700">Phone Number</span>
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  value={formState.phoneNumber}
-                  onChange={handleChange}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </label>
-            </div>
-            <label className="block">
-              <span className="text-gray-700">Message</span>
-              <textarea
-                name="message"
-                value={formState.message}
-                onChange={handleChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-            </label>
-            <button
-              type="submit"
-              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-              netlify
-            >
-              Submit
-            </button>
-          </form>
-        )}
-      </div>
-    </div>
+        {/* Honeypot field to prevent spam submissions */}
+        <div style={{ display: "none" }}>
+          <Form.Group>
+            <Form.Label>Don't fill this out if you're human:</Form.Label>
+            <Form.Control type="text" name="bot-field" />
+          </Form.Group>
+        </div>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={formState.name}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            as="textarea"
+            name="message"
+            rows={3}
+            value={formState.message}
+            onChange={handleChange}
+          />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">Submit</Button>
+      </Form>
+    </Container>
   );
-}
+};
 
 export default Contact;

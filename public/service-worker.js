@@ -6,7 +6,6 @@ const CACHE_NAME = 'my-cache';
 const filesToCache = [
   '/',
   '/index.html',
-  '/styles/generated.css',
   '/app/App.js',
   // Add other resources you want to cache
   '/files/resume.pdf'

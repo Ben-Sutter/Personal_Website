@@ -1,5 +1,4 @@
 // import React from "react";
-// import "../styles/generated.css";
 // import MarkdownIt from 'markdown-it';
 // import post1 from '../posts/post1.md';
 // import post2 from '../posts/post2.md';
