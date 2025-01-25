@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Container } from 'react-bootstrap';
+import { Container } from "react-bootstrap";
 import Header from "./Header";
 import Blog from "../pages/Blog";
 import Resume from "../pages/Resume";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   document.title = "BENBENBENBENBENBENBENBENBENBENBENBENBENBEN";

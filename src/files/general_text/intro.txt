@@ -1,3 +1,7 @@
+Ok im ngl i tried to pull out ALL of my original styling bc i got sick of using tailwind css, but now the page is absolutely thrashed and mis-styled.
+--
+
+
 Hi, my name is Ben. 
 
 Earlier this year I was laid off and remained unemployed for four months. 
