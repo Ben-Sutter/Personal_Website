@@ -3,33 +3,33 @@
  * @returns {JSX.Element} The rendered Resume page component.
  */
 import React from "react";
-import styled from 'styled-components';
-import "../styles/generated.css";
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import resume from "../files/resume.pdf"; // Import the PDF
 
 const Resume = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full md:w-3/4 lg:w-2/3 p-6">
-        <div className="bg-white shadow-2xl rounded-2xl overflow-hidden">
-          <div className="p-6 text-center">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">My Resume</h1>
-            <p className="text-gray-600">
-              View my resume below. Thanks for checking it out!
-            </p>
-          </div>
-          <div className="p-6 bg-gray-50">
-            <embed
-              src={resume}
-              type="application/pdf"
-              width="100%"
-              height="700px"
-              className="shadow-lg rounded-md"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container fluid className="min-vh-100 d-flex align-items-center bg-light">
+      <Row className="justify-content-center w-100">
+        <Col md={10} lg={8}>
+          <Card className="shadow-lg">
+            <Card.Body className="text-center">
+              <Card.Title className="display-4 font-weight-bold mb-4">My Resume</Card.Title>
+              <Card.Text className="lead mb-4">
+                View my resume below. Thanks for checking it out!
+              </Card.Text>
+              <embed
+                src={resume}
+                type="application/pdf"
+                width="100%"
+                height="700px"
+                className="border rounded"
+              />
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

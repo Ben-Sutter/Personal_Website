@@ -1,25 +1,21 @@
-/**
- * The main component of the application.
- * Renders the header and routes to different pages based on the URL path.
- *
- * @returns {JSX.Element} The rendered App component.
- */
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 import Header from "./Header";
 import Blog from "../pages/Blog";
 import Resume from "../pages/Resume";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   document.title = "BENBENBENBENBENBENBENBENBENBENBENBENBENBEN";
   return (
     <Router>
-      <div className="bg-fuchsia-200 min-h-screen">
+      <Container fluid className="bg-light min-vh-100 d-flex flex-column">
         <Header />
-        <div className="pt-20">
+        <Container className="pt-5 flex-grow-1">
           <Routes>
             <Route path="/blog" element={<Blog />} />
             <Route path="/resume" element={<Resume />} />
@@ -27,8 +23,8 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/" element={<Home />} />
           </Routes>
-        </div>
-      </div>
+        </Container>
+      </Container>
     </Router>
   );
 };
