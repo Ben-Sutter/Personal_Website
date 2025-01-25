@@ -6,8 +6,18 @@ const Blog = () => {
     <div className="flex justify-center">
       <div className="w-full md:w-3/4 p-10">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true" netlify>
+          {/* Hidden field for Netlify form handling */}
           <input type="hidden" name="form-name" value="contact" />
+
+          {/* Honeypot field to prevent spam submissions */}
+          <div style={{ display: "none" }}>
+            <label>
+              Don't fill this out if you're human:
+              <input type="text" name="bot-field" />
+            </label>
+          </div>
+
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">
