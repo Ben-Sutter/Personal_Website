@@ -43,8 +43,20 @@ function Contact() {
             onSubmit={handleSubmit}
             className="space-y-4"
             name="contact"
+            method="POST"
+            data-netlify="true"
             netlify
           >
+            {/* Hidden field for Netlify form handling */}
+            <input type="hidden" name="form-name" value="contact" />
+
+            {/* Honeypot field to prevent spam submissions */}
+            <div style={{ display: "none" }}>
+              <label>
+                Don't fill this out if you're human:
+                <input type="text" name="bot-field" />
+              </label>
+            </div>
             <label className="block">
               <span className="text-gray-700">Name</span>
               <input
@@ -89,6 +101,7 @@ function Contact() {
             <button
               type="submit"
               className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              netlify
             >
               Submit
             </button>

@@ -6,9 +6,9 @@ const Blog = () => {
     <div className="flex justify-center">
       <div className="w-full md:w-3/4 p-10">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
-        <form name="contact" method="POST" data-netlify="true" netlify>
+        <form name="blogPOSTlol" method="POST" data-netlify="true" netlify>
           {/* Hidden field for Netlify form handling */}
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="blogPOSTlol" />
 
           {/* Honeypot field to prevent spam submissions */}
           <div style={{ display: "none" }}>
@@ -47,6 +47,7 @@ const Blog = () => {
               <button
                 type="submit"
                 className="px-2 sm:px-3 py-1 sm:py-2 rounded-lg bg-fuchsia-600 text-fuchsia-200 font-bold hover:bg-fuchsia-700 hover:text-fuchsia-300"
+                netlify
               >
                 Send
               </button>
